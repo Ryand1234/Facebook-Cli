@@ -10,7 +10,7 @@ const figlet = require('figlet')
 var profileOptions = require('./question')
 const login = require('./authentication/login')
 const { start_server } = require('./authentication/load_script')
-const printUsage = require('./authentication/usage')
+const printUsage = require('./usage')
 const { checkAccessKey } = require('./authentication/token')
 
 
