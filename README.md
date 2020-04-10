@@ -11,7 +11,7 @@ APP_ID=<YOUR_APP_ID>
 APP_SECRET=<YOUR_APP_SECRET>
 ```
 
-To get APP_ID and APP_SECRET, Your need the following:
+To get APP_ID and APP_SECRET, You need the following:
 
 1. A [Facebook Developer Account](https://developers.facebook.com/apps/)
 2. A registered Facebook App with Basic Settings configured
