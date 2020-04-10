@@ -8,8 +8,7 @@ const { exec } = require('child_process')
 const homedir = require('os').homedir();
 require('dotenv').config({ path: homedir + '/.facebook/.env' });
 
-const home = require('./home_interface')
-var { write_code } = require('./load_script')
+var { write_code } = require('./authentication/load_script')
 
 //To generate the Access Token which will be used to access Authorised routes
 // uri : redirect_url where we will hit to get the dialog box to log into the account

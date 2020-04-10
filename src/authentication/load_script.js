@@ -1,6 +1,5 @@
 const https = require('https');
 const fs = require('fs');
-const { access_token, read_code } = require('./token');
 const { exec } = require('child_process')
 const homedir = require('os').homedir();
 

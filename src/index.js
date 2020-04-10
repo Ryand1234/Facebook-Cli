@@ -8,11 +8,10 @@ const chalk = require('chalk')
 const figlet = require('figlet')
 
 var profileOptions = require('./question')
-const { read_code } = require('./token');
-const login = require('./login')
-const { start_server } = require('./load_script')
-const printUsage = require('./usage')
-const { checkAccessKey } = require('./token')
+const login = require('./authentication/login')
+const { start_server } = require('./authentication/load_script')
+const printUsage = require('./authentication/usage')
+const { checkAccessKey } = require('./authentication/token')
 
 
 //To generate the code through which user will be able to log into
