@@ -16,6 +16,12 @@ To get APP_ID and APP_SECRET, Your need the following:
 1. A [Facebook Developer Account](https://developers.facebook.com/apps/)
 2. A registered Facebook App with Basic Settings configured
 
+Then execute the command 
+
+`bash start.sh`
+
+to install all the dependencies for this CLI.
+
 ## Login
 To get code for log in type
 `facebook -s`
