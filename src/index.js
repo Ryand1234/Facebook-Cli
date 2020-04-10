@@ -1,38 +1,44 @@
 #!/usr/bin/env node
 require('dotenv').config();
-var chalk = require('chalk');
-var figlet = require('figlet');
-var clear = require('clear');
 const args = require('minimist')(process.argv.slice(2));
+const sleep = require('sleep');
+var keypress = require('keypress');
+const clear = require('clear')
+const chalk = require('chalk')
+const figlet = require('figlet')
 
-var { login_question, profileOptions } = require('./question')
+var profileOptions = require('./question')
+const { read_code } = require('./token');
+const login = require('./login')
+const { start_server } = require('./load_script')
+const printUsage = require('./usage')
+const { checkAccessKey } = require('./token')
 
-var user_info;
 
-const begin = async () => {
-	//User Login Data ( Email, Password )
-	user_info = await login_question();
-	
-	//if successfull login 
-	home();
+//To generate the code through which user will be able to log into
+
+function genCode() {
+
+
+
+	//login function implemented in login.js file
+	login();
+
+
+	//To start the server to visit the redirect url
+	start_server();
+
 }
-
-
-if(args.l == undefined){
-	printUsage();
-} else {
-	//begin Facebook CLI
-	begin()
-}
-
 
 // Facebook title in ASCII form 
+
 function title(){
 	console.log(chalk.green(figlet.textSync('FaceBook  CLI', { horizontalLayout: 'fitted' })));
 }
 
 
 async function home() {
+
 		//clear screen for better view
 		clear();
 
@@ -60,11 +66,31 @@ async function home() {
 			//Logout()
 			process.exit(1);
 		}
+
 }
 
-function printUsage() {
-	console.error(chalk.red("Flag not supplied"));
-	console.log(chalk.red("Usage:  "));
-	console.log(chalk.red("		-l 		login"));
-	process.exit(1);
+
+//Help Option
+if(args.h) {
+	printUsage();
 }
+
+//TO generate Code
+if(args.s){
+	genCode();
+}
+
+//Facebook CLI Console Option
+if(args.c){
+	home();
+}
+
+//Authentication Option
+if(args.a){
+	checkAccessKey();
+}
+
+
+
+
+
