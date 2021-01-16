@@ -8,6 +8,7 @@ const chalk = require('chalk')
 const figlet = require('figlet')
 
 var profileOptions = require('./question')
+const { profile, show_profile } = require('./features/profile')
 const login = require('./authentication/login')
 const { start_server } = require('./authentication/load_script')
 const printUsage = require('./usage')
@@ -17,8 +18,6 @@ const { checkAccessKey } = require('./authentication/token')
 //To generate the code through which user will be able to log into
 
 function genCode() {
-
-
 
 	//login function implemented in login.js file
 	login();
@@ -50,8 +49,8 @@ async function home() {
 		// Fully not Implemented
 
 		if (select.option == 'Profile') {
-			//profile()
-			home()
+			profile()
+			home();
 		} else if (select.option == 'Friends') {
 			//Friends()
 			home()

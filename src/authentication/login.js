@@ -11,7 +11,7 @@ function login(){
 
 var url =  "https://www.facebook.com/dialog/oauth?client_id=" +  process.env.APP_ID +
       "&redirect_uri=https://localhost:3000"+
-      "&scope=user_likes,user_posts,user_photos,user_videos"
+      "&scope=user_likes,user_posts,user_photos"
 
 console.log("Please visit ", url);
 

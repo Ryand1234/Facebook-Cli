@@ -1,4 +1,3 @@
-const axios = require('axios')
 const http = require('http')
 const request = require('request')
 const fs = require('fs')
